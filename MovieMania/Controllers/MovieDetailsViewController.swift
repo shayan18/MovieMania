@@ -15,6 +15,7 @@ class MovieDetailsViewController: UIViewController {
     @IBOutlet weak var moviesTableView: UITableView!
     @IBOutlet weak var suggestionTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var spinnerView: UIActivityIndicatorView!
     
     //MARK: Properties
     let reuseIdentifier = "movieCell"
@@ -22,7 +23,9 @@ class MovieDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        movieViewModel.updateResults()
+        //server hit to get movieslist
+        startSpinner(spinner: spinnerView)
+        movieViewModel.updateMoviesList()
         
         movieViewModel.delegate = self
         searchBar.delegate = self
@@ -40,9 +43,12 @@ class MovieDetailsViewController: UIViewController {
 
 extension MovieDetailsViewController : MovieDetailsProtocol {
     
+    
+    
     //success delegate method to update movies tableView
     func movieDetailsSuccess(hasMovies: Bool) {
         
+        stopSpinner(spinner: spinnerView)
         //hasMovies bool true reload movies tableView
         if hasMovies {
             moviesTableView.reloadData()
@@ -60,10 +66,13 @@ extension MovieDetailsViewController : MovieDetailsProtocol {
     //failure delegate method to show error
     func movieDetailsfailure(message: String) {
         
+        stopSpinner(spinner: spinnerView)
         self.showAlert(title: "Error", message: message)
     }
     
+    
 }
+
 
 //MARK: TableView Delegate Methods
 extension MovieDetailsViewController: UITableViewDelegate,UITableViewDataSource {
@@ -136,7 +145,11 @@ extension MovieDetailsViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
         //replacing whitespaces with %20 so that search query can include spaces without getting invalid url string error
-        movieViewModel.currentQuery = searchBar.text?.replacingOccurrences(of: " ", with: "%20")
+        startSpinner(spinner: spinnerView)
+        movieViewModel.currentQuery = searchBar.text
+        
+      
+
         searchBar.endEditing(true)
         viewSuggestion()
         

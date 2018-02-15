@@ -25,4 +25,23 @@ extension UIViewController{
         alertController.addAction(okAction)
         self.present(alertController, animated: true, completion: nil)
     }
+    
+    /*
+     call start and stop spinner on view controller
+    */
+    func startSpinner (spinner: UIActivityIndicatorView) {
+        
+        spinner.startAnimating()
+        spinner.isHidden = false;
+        
+    }
+    
+    func stopSpinner (spinner: UIActivityIndicatorView) {
+        
+        spinner.stopAnimating()
+        spinner.isHidden = true;
+        
+    }
+    
+    
 }

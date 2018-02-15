@@ -79,9 +79,9 @@ public struct Movie {
 extension Movie{
     
     
-    /**
-     This property returns a URL to fetch movie poster
-     */
+    
+     //property returns  url to get movie image poster
+    
     
     var posterUrl:URL?{
         if posterPath == nil {return nil}

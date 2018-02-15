@@ -33,7 +33,7 @@ weak var delegate : MovieDetailsProtocol?
     
     //searchMovie method
     func searchMovies(route :String, query: String? = nil, page: Int? = nil)  {
-        NetworkConfig.getMoviedetails(route: route, query: query, page: page) { (response, error) in
+        NetworkConfig.getMovieDetails(route: route, query: query, page: page) { (response, error) in
             
             //error check
             if error == nil {
@@ -45,12 +45,12 @@ weak var delegate : MovieDetailsProtocol?
                     self.movies.append(contentsOf: results.map{ Movie(json: $0) })
                     
                     //if search successfull store the query in suggestion list
-                    SearchHistory.addSuggestion(query: self.currentQuery?.replacingOccurrences(of: "%20", with: " "))
+                    SearchHistory.addSuggestion(query: self.currentQuery)
                     //calling success delegate method returning true
                       self.delegate?.movieDetailsSuccess(hasMovies: true)
 
                 }
-                //movies check
+                //movies check for zero count
                  if self.movies.count == 0 {
                      //calling success delegate method and returning false
                     self.delegate?.movieDetailsSuccess(hasMovies: false)
@@ -83,10 +83,11 @@ weak var delegate : MovieDetailsProtocol?
             movies.removeAll()
         }
     }
+    // setting CurrentQuery, increment page and update movie
     var currentQuery : String? {
         
         didSet {
-            
+           
             if currentQuery != previousQuery {
                 previousQuery = currentQuery
             }
@@ -94,22 +95,26 @@ weak var delegate : MovieDetailsProtocol?
                 
                 currentPage += 1
             }
-              updateResults()
+              updateMoviesList()
         }
     }
     
     
-    func updateResults(){
+    func updateMoviesList(){
+        // is loadingData true showing that server request still in process
         if isLoadingData{ return }
+        //if query is nil or empty searchMovies will use discoveryMovies route to get best movies
+        
         if currentQuery == nil || currentQuery!.isEmpty{
             
-            searchMovies(route: Routes.discoverMovies)
+            searchMovies(route: Routes.discoverMovies, page: currentPage)
 
         }
         else{
-            
+            //if query provided valid will use movieSearch route
             searchMovies(route: Routes.movieSearch, query: currentQuery!, page: currentPage)
         }
+        //request in a way, set isLoadingData true
         self.isLoadingData = true
     }
     

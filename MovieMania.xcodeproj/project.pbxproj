@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		231D2A44203435280016A8E6 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231D2A43203435280016A8E6 /* Extension+String.swift */; };
 		234B6B112032DD6E00626C67 /* SearchHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234B6B102032DD6E00626C67 /* SearchHistory.swift */; };
 		234B6B132032E07C00626C67 /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234B6B122032E07C00626C67 /* Extension+UIViewController.swift */; };
 		237DF6E4202B050800F73002 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237DF6E3202B050800F73002 /* AppDelegate.swift */; };
@@ -46,7 +45,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		231D2A43203435280016A8E6 /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		234B6B102032DD6E00626C67 /* SearchHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistory.swift; sourceTree = "<group>"; };
 		234B6B122032E07C00626C67 /* Extension+UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
 		237DF6E0202B050800F73002 /* MovieMania.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieMania.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,7 +151,6 @@
 			isa = PBXGroup;
 			children = (
 				234B6B122032E07C00626C67 /* Extension+UIViewController.swift */,
-				231D2A43203435280016A8E6 /* Extension+String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -544,7 +541,6 @@
 				237DF71C202B051D00F73002 /* NetworkConfig.swift in Sources */,
 				237DF71A202B051D00F73002 /* MovieDetailsViewController.swift in Sources */,
 				237DF6E4202B050800F73002 /* AppDelegate.swift in Sources */,
-				231D2A44203435280016A8E6 /* Extension+String.swift in Sources */,
 				237DF6EC202B050800F73002 /* MovieMania.xcdatamodeld in Sources */,
 				234B6B132032E07C00626C67 /* Extension+UIViewController.swift in Sources */,
 				237DF719202B051D00F73002 /* MovieDetailsTableViewCell.swift in Sources */,
