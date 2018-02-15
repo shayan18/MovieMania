@@ -1,0 +1,6 @@
+framework module Pods_MovieMania {
+  umbrella header "Pods-MovieMania-umbrella.h"
+
+  export *
+  module * { export * }
+}
