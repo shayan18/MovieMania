@@ -2,8 +2,8 @@
 //  Extension+UIViewController.swift
 //  MovieDB
 //
-//  Created by Invision on 26/11/2017.
-//  Copyright © 2017 Daniyal Raza. All rights reserved.
+//  Created by Shayan on 26/11/2017.
+//  Copyright © 2017 shayan. All rights reserved.
 //
 
 import Foundation

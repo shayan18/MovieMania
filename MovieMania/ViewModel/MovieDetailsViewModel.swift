@@ -2,8 +2,8 @@
 //  MovieDetailsViewModel.swift
 //  moviePoster
 //
-//  Created by Invision on 07/02/2018.
-//  Copyright © 2018 invision. All rights reserved.
+//  Created by Shayan on 07/02/2018.
+//  Copyright © 2018 shayan. All rights reserved.
 //
 
 import Foundation

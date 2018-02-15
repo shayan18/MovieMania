@@ -2,8 +2,8 @@
 //  SearchHistory.swift
 //  MovieMania
 //
-//  Created by Invision on 13/02/2018.
-//  Copyright © 2018 invision. All rights reserved.
+//  Created by Shayan on 13/02/2018.
+//  Copyright © 2018 shayan. All rights reserved.
 //
 
 import Foundation

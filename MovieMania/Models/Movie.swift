@@ -1,7 +1,7 @@
 //
-//  Results.swift
+//  Movie.swift
 //
-//  Created by Invision on 12/02/2018
+//  Created by Shayan on 12/02/2018
 //  Copyright (c) . All rights reserved.
 //
 
